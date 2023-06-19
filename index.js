@@ -13,6 +13,7 @@ var instance = new Razorpay({
     key_secret: process.env.RAZORPAY_SECRET
 });
 
+//<-------------------- POST route ------------------------>//
 app.post("/create-order", async (req, res) => {
     var options = {
         amount: req.body.amount,
