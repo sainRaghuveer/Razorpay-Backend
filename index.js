@@ -3,9 +3,19 @@ const cors = require("cors");
 const Razorpay = require("razorpay");
 require('dotenv').config();
 
+//<-------------------- Creating App ------------------------>//
 const app = express();
+
+//<-------------------- Accessing cross origin ------------------------>//
 app.use(cors());
+
+//<-------------------- Body parser ------------------------>//
 app.use(express.json());
+
+//<-------------------- Default route ------------------------>//
+app.get("/", (req, res) => {
+    res.send("Welcome to Razorpay backed");
+})
 
 
 var instance = new Razorpay({
@@ -31,6 +41,7 @@ app.post("/create-order", async (req, res) => {
 });
 
 
+//<-------------------- Server ------------------------>//
 app.listen(process.env.PORT, () => {
     console.log(`server is running at PORT: ${process.env.PORT}`);
 })
