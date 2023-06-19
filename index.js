@@ -26,7 +26,7 @@ var instance = new Razorpay({
 //<-------------------- POST route ------------------------>//
 app.post("/create-order", async (req, res) => {
     var options = {
-        amount: req.body.amount,
+        amount: ((req.body.amount)*100),
         currency: "INR",
         receipt: "receipt_1",
     };
