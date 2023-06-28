@@ -30,7 +30,6 @@ app.post("/create-order", async (req, res) => {
         currency: "INR",
         receipt: "receipt_1",
     };
-
     try {
         const order = await instance.orders.create(options);
         console.log(order);
